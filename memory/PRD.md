@@ -18,8 +18,13 @@ Single-file static HTML (dl-store.html):
 
 ## What's Implemented
 
-### 2026-03-30
-- [x] DL Store branding (header, title, favicon)
+## What's Implemented (Updated 2026-03-30)
+- Auto-sync GitLab, APP_ICON_MAP filled for 35+ apps
+- APP_NAME_MAP filled for all 56 apps (proper Vietnamese/English names)
+- APP_DESC_MAP added and filled for all 56 apps
+- APP_DESC_MAP integrated in card HTML rendering
+- DL Store button stays on site; rupanh123-phap → phap.vercel.app
+- dl-store.html renamed to index.html
 - [x] Provider modal with image icons — `ICON_DLSTORE_PLACEHOLDER` / `ICON_PHAP_PLACEHOLDER`
 - [x] rupanh123-phap button → https://phap.vercel.app
 - [x] Auto-sync from GitLab API on page load

@@ -367,40 +367,114 @@ const GITLAB_RAW     = `https://gitlab.com/${GITLAB_PROJECT}/-/raw/${GITLAB_BRAN
 // (Xem trong HTML phần Provider Modal để thay trực tiếp)
 
 // ----------------------------------------------------------------
-// APP ICONS — Icon mặc định và icon riêng từng app
+// APP ICONS — Đã điền sẵn theo file trong GitLab
 //
 //   Find & Replace:
-//     "ICON_APP_DEFAULT_PLACEHOLDER" → URL ảnh icon mặc định cho tất cả app
+//     "ICON_APP_DEFAULT_PLACEHOLDER" → URL ảnh icon mặc định khi không có icon riêng
 //
-//   Để đặt icon riêng từng app, thêm vào APP_ICON_MAP bên dưới:
+//   Thêm/sửa icon riêng bên dưới:
 //     Key   = tên file KHÔNG có đuôi (khớp chính xác, phân biệt hoa/thường)
 //     Value = URL ảnh icon
-//
-//   Ví dụ:
-//     "SmartTube_stable_31.17_universal": "https://example.com/smarttube.png",
-//     "TiviMate_2.1.5_Premium":           "https://example.com/tivimate.png",
 // ----------------------------------------------------------------
 const DEFAULT_APP_ICON = "ICON_APP_DEFAULT_PLACEHOLDER";
 
 const APP_ICON_MAP = {
-  // Thêm icon riêng cho từng app tại đây:
-  // "tên-file-không-có-đuôi": "https://url-icon.com/icon.png",
+  // === APK Fix ===
+  "Set_Orientation":                    "https://play-lh.googleusercontent.com/RqiV1jB4ywGtAVTmNOqnmgYo37OCrKDqiSQKaHvVM8rg8-ywdRNEit98wmsFdniusvpH",
+  "Set_Orientation_mod":                "https://play-lh.googleusercontent.com/RqiV1jB4ywGtAVTmNOqnmgYo37OCrKDqiSQKaHvVM8rg8-ywdRNEit98wmsFdniusvpH",
+  "Set_Orientation_no_icon":            "https://play-lh.googleusercontent.com/RqiV1jB4ywGtAVTmNOqnmgYo37OCrKDqiSQKaHvVM8rg8-ywdRNEit98wmsFdniusvpH",
+  "apkmirro":                           "https://play-lh.googleusercontent.com/04zdh0xwgkxR0kTE_pAzURKJjihHjR9Nz5RSU1R7toS9W8-QCLE1RtJBS4Csl-ueEUU",
+  "ntp":                                "https://cdn-icons-png.freepik.com/512/5521/5521277.png",
+  "sai":                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8YNOlv-Q7KsVQcplQu0_Jpn-1u2sEDUfjW0Jb2vSQFBQi57CJ7TCtHmQ&s=10",
+
+  // === APK Mod ===
+  "Button_Mapper_v3.22_322_":           "https://play-lh.googleusercontent.com/nsmWhzYhXDbxGqE-Z9iUFFQXuFJqtaEgucwCVMoozpnUSkjkyxBVe2pPXG3WSbqN6Q",
+  "Buttons_remapper_v1.24.1__PREMIUM_": "https://play-lh.googleusercontent.com/QeDg46ts4oHQxpx03egAQ9F9PLTbtKQUh2LObXrylexydDHje6UKKQbw3eo6F0HlbWMT",
+  "SendFilesToTV-1.4.22":               "https://play-lh.googleusercontent.com/3gYxMaD-AqhFjhvPBX6GBpJfmZ_HOxj2xGm-YGi1hs3bgbCmyKpBXvixJhC7nXNOqXs",
+  "ferraridownloader":                  "https://m.media-amazon.com/images/I/31KVvZnHbuL.png",
+  "tvQuickActions-Pro_3.5.5_Mod":       "https://play-lh.googleusercontent.com/u1e6dAgrKtHo7m9vfVJqOXdiw6DFgZWAfV1PiqlxJFsZ-4FB_xN2wNP4Nsrd_e87oEQ",
+  "vlc":                                "https://play-lh.googleusercontent.com/nPnJc260PPoupBe-DcVQ-MNr6149dphdEoEAN-C9xwgctpVXbwsuyon_jEZ3uPWWYQ",
+  // "TV": icon chưa xác định được — xem mục CẦN TỰ TÌM bên dưới
+
+  // === APK Tool ===
+  "Remote_ADB_5.0":                     "https://play-lh.googleusercontent.com/k7lEVSrxLA54xzKtV7TUXew2fjrCuej-gBkeihuGYa4u9_cGdMRcBNEmx3JwpbY0E4JN",
+  "adbtv-v1.12":                        "https://play-lh.googleusercontent.com/k7lEVSrxLA54xzKtV7TUXew2fjrCuej-gBkeihuGYa4u9_cGdMRcBNEmx3JwpbY0E4JN",
+  "atvTools_1.2.0_mod":                 "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cf/77/0e/cf770e7e-1e9c-d8cf-696e-f2a2eae582e0/AppIcon-0-0-1x_U007epad-0-1-85-220.png/1024x1024bb.png",
+
+  // === Ban Phim Anriod TV ===
+  "leankey":                            "https://play-lh.googleusercontent.com/64lBNTOitObo3YW5estD6CBo1LMARegXfk3AY2L6nVjCPCC21YEZ5uYsRvJjuNfIEwA",
+  // "LatinIMEGoogleTvPrebuilt": icon chưa tìm được
+
+  // === IPTV ===
+  "IPTV_PRO":                           "https://play-lh.googleusercontent.com/HAQ18Pg2JzUzcZFQ4qUWlIaxPwftQ0oAt1U1TMVYQR3hchn_Dtj36LTPdga6thCbKnA",
+  "OTT_Navigator_v1.7.3.2":            "https://tuyenbomientrutrachnhiemvecacphanmemduoccungcaptubenthuba.vercel.app/api/raw/?path=/resources/ott.png",
+  "SparkleTV":                          "https://play-lh.googleusercontent.com/eYfJHADMYNZpqaiTslBETpzIoZdHiNT_IZ2hQ_pG8_gNG6hEfW2C6ENEEPaIvHNVOA",
+  "Televizo_byphaptx52022":             "https://tuyenbomientrutrachnhiemvecacphanmemduoccungcaptubenthuba.vercel.app/api/raw/?path=/resources/ip.png",
+  "TiviMate_2.1.5_Premium":            "https://downloadr2.apkmirror.com/wp-content/uploads/2022/10/42/634afd651f0b8.png",
+  "tivimate":                           "https://downloadr2.apkmirror.com/wp-content/uploads/2022/10/42/634afd651f0b8.png",
+
+  // === KHO UNG DUNG _ TRINH DUYET ===
+  "apkup":                              "https://play-lh.googleusercontent.com/JVPqSUjWg9JYlw_KitvbDtmImVcINiW-eZITgdD92RQ4tV2F_WUOrVTkPmBamCUeZIo",
+  "aptoidetv":                          "https://images.sftcdn.net/images/t_app-icon-m/p/ce9b1536-96d0-11e6-b886-00163ed833e7/247507360/aptoide-logo",
+  "baostore":                           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3P4tna6MLpHSTuMhRnnXu_JmM9kleXATkgqcQ0OQfzK37aAGNuRVekk&s=10",
+  "dlstore":                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl5croHG9fWW199IYHCUWg25G732Y1srdVjA&s",
+  "emotnstore":                         "https://static.emotn.com/img/logo.png",
+  "mstore":                             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_NX-IY9UEoRsAMatZKDqLfbv-sq04RCacQg&s",
+  "ttvstore":                           "https://i.ibb.co/kFRnq3g/5p.png",
+  // "hdplaystore": icon chưa tìm được
+
+  // === Laucher Mod ===
+  "Projectivy+Launcher_v4.53_69__Mod":  "https://play-lh.googleusercontent.com/6bigO3_72JW9xTdkX7Mpm8fTBiP7ISDCUcI2E3C79P21uwuJC6VWD8pFxH-bXvc-CVZm",
+  "Projectivy_Launcher_v4.64":          "https://play-lh.googleusercontent.com/6bigO3_72JW9xTdkX7Mpm8fTBiP7ISDCUcI2E3C79P21uwuJC6VWD8pFxH-bXvc-CVZm",
+  "atvlauncher":                        "https://play-lh.googleusercontent.com/K9ezslXnY0Y_SvZrjV3wWQkbnViIDKUAFVUA6PyzMpveV661gnuBKLiwngfAhagxXko=w526-h296-rw",
+  // "Google_TV_Home_1.0.499253741": icon chưa tìm được
+  // "HomeTV_Launcher_6.3.11": icon chưa tìm được
+  // "LM_ATV_-1.0.4_mod": icon chưa tìm được
+  // "LM_FireTV_118": icon chưa tìm được
+
+  // === PHIM_TRUYEN HINH_THE THAO ===
+  "hieuga":                             "https://www.hieugaphim.fun/logo.png",
+  "nvc":                                "https://toppng.com/uploads/preview/play-movies-icon-android-lollipop-11530957374aecomtjqey.png",
+  "dailymotion":                        "https://play-lh.googleusercontent.com/UMJe4GuECPYJNHfHPijZ7BinWSiUKXiXJjXpBBFbAGDY44a_9dYxTiXBs6WBZH_VYWY",
+  // "4.6.0": không xác định được tên app
+  // "hdotv-2.1.4": icon chưa tìm được
+  // "rapphimtv": icon chưa tìm được
+
+  // === Quan Li File ===
+  "rsfile":                             "https://play-lh.googleusercontent.com/dEeyATXftk2cMTNSXBCnyD-ZGNRi40naefdlJoS6_YLvODIuUjNn_HQTx_96TIFKldk2ob0x66HEXh_NnPAsXxc=w256",
+  // "ES-File-Explorer-Premium-v4.4.3.2-Mod": icon chưa tìm được
+  // "ES_File_Explorer_File_Manager_Premium_v4.2.2.5": icon chưa tìm được
+  // "MiXplorer-Silver-6.70.3": icon chưa tìm được
+  // "MiXplorer-v6.69.2-Silver_b25122550-Mod": icon chưa tìm được
+  // "TotalCmd_3.62d-v7a": icon chưa tìm được
+  // "X-plore_File_Manager_v4.19.10__Donate_": icon chưa tìm được
+
+  // === TRUYEN HINH ===
+  "cotivi":                             "https://i.ibb.co/mrVGbpdk/cotivi.png",
+  "dltv":                               "https://play-lh.googleusercontent.com/gEpSxRbJNkN-bgnpX4khvulqP3a5ZOOgkbKw7CCg_-Ye4QHn5Kxh4nL-Ek_JhDc0Nwk",
+  "iMedia_TV_25.04.06.B":               "https://image.winudf.com/v2/image1/ZGV2X2ltYWdlXzI0MDc0NzY4XzIwMTQ0OV8yMDIzMDcyODAzNDY0NTE4MA/icon.webp",
+  // "VTVgo_TV_v11.12.30__1_": icon chưa tìm được
+  // "VTVgo_TV_v12.2.11": icon chưa tìm được
+  // "quantv": icon chưa tìm được
+  // "vapptv": icon chưa tìm được
+  // "vmtmod2": icon chưa tìm được
+
+  // === YOUTUBE ===
+  "SmartTube_stable_31.17_universal":   "https://img.utdstc.com/icon/b9f/977/b9f977832d162f1a9e65e2df6fb6a1ae352121073563b43e1837f8fbcf79601b:200",
+  "kiki":                               "https://play-lh.googleusercontent.com/KZVTvc0gOIuF0xGI41fi-oIef-VeuBBT_hWujdOOr8C-Aq-4cr92jvtjFHf1Iff9gtY=w240-h480-rw",
+  "mapvoice":                           "https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-25-512.png",
+  "tkgn":                               "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRXjAMcwU-Cksb8_KTKCiXiX6vd4bKxbhsrA&s",
+  // "ToTube": icon chưa tìm được
 };
 
 // ----------------------------------------------------------------
 // CATEGORY NAME MAP — Đổi tên hiển thị của danh mục
-// Sync vẫn dùng tên thư mục GitLab để đọc dữ liệu,
-// nhưng hiển thị trên trang sẽ theo giá trị bạn đặt ở đây.
-//
-// Cách dùng: bỏ comment dòng nào bạn muốn đổi và sửa tên.
-// Key   = tên thư mục GitLab (chính xác, phân biệt hoa/thường)
-// Value = tên hiển thị trên trang
 // ----------------------------------------------------------------
 const CATEGORY_NAME_MAP = {
   // "APK Fix":                     "APK Fix",
   // "APK Mod":                     "APK Mod",
   // "APK Tool":                    "APK Tool",
-  // "AppDrawer":                   "AppDrawer",
+  // "AppDrawer":                   "App Drawer",
   // "Ban Phim Anriod TV":          "Bàn Phím Android TV",
   // "IPTV":                        "IPTV",
   // "KHO UNG DUNG _ TRINH DUYET": "Kho Ứng Dụng & Trình Duyệt",
@@ -408,55 +482,199 @@ const CATEGORY_NAME_MAP = {
   // "PHIM_TRUYEN HINH_THE THAO":  "Phim - Truyền Hình - Thể Thao",
   // "Quan Li File":                "Quản Lý File",
   // "TRUYEN HINH":                 "Truyền Hình",
-  // "YOUTUBE":                     "YouTube",
+  // "YOUTUBE":                     "YouTube & Xem Video",
 };
 
 // ----------------------------------------------------------------
-// APP NAME MAP — Đổi tên hiển thị của từng ứng dụng
-// Key   = tên file KHÔNG có đuôi (chính xác, phân biệt hoa/thường)
-// Value = tên hiển thị trên trang
-//
-// Xem tên file thực tế trong GitLab để điền Key đúng.
-// Ví dụ từ repo hiện tại:
+// APP NAME MAP — Tên hiển thị cho từng ứng dụng
 // ----------------------------------------------------------------
 const APP_NAME_MAP = {
-  // --- APK Fix ---
-  // "Set_Orientation":                       "Xoay Màn Hình",
-  // "Set_Orientation_mod":                   "Xoay Màn Hình (Mod)",
-  // "Set_Orientation_no_icon":               "Xoay Màn Hình (Không Icon)",
-  // "apkmirro":                              "APK Mirror Installer",
-  // "ntp":                                   "Sửa Lỗi Ngày Giờ NTP",
-  // "sai":                                   "SAI APK Installer",
-  //
-  // --- APK Mod ---
-  // "Button_Mapper_v3.22_322":               "Button Mapper",
-  // "Buttons_remapper_v1.24.1_PREMIUM":      "Buttons Remapper Premium",
-  // "SendFilesToTV_1.4.22":                  "SendFilesToTV",
-  // "ferraridownloader":                     "Ferrari Downloader Store",
-  // "tvQuickActions_Pro_3.5.5_Mod":          "TVQuickActions Pro",
-  // "vlc":                                   "VLC",
-  //
-  // --- Laucher Mod ---
-  // "Google_TV_Home_1.0.499253741":          "Google TV Home",
-  // "HomeTV_Launcher_6.3.11":               "HomeTV Launcher",
-  // "Projectivy+Launcher_v4.53_69__Mod":    "Projectivy Launcher (Mod)",
-  // "Projectivy_Launcher_v4.64":            "Projectivy Launcher",
-  // "atvlauncher":                           "ATV Launcher PRO",
-  //
-  // --- IPTV ---
-  // "IPTV_PRO":                              "IPTV PRO",
-  // "OTT_Navigator_v1.7.3.2":               "OTT Navigator Premium",
-  // "SparkleTV":                             "Sparkle TV",
-  // "Televizo_byphaptx52022":               "Televizo Premium",
-  // "TiviMate_2.1.5_Premium":              "TiviMate Premium 2.1.5",
-  // "tivimate":                              "TiviMate Premium",
-  //
-  // --- YOUTUBE ---
-  // "SmartTube_stable_31.17_universal":     "SmartTube (Stable)",
-  // "ToTube":                               "ToTube",
-  // "kiki":                                 "Tìm Kiếm Giọng Nói KiKi",
-  // "mapvoice":                             "Map Voice Tìm Kiếm",
-  // "tkgn":                                 "Tìm Kiếm Giọng Nói",
+  // === APK Fix ===
+  "Set_Orientation":                    "Set Orientation",
+  "Set_Orientation_mod":                "Set Orientation (Mod)",
+  "Set_Orientation_no_icon":            "Set Orientation (No Icon)",
+  "apkmirro":                           "APK Mirror Installer (MOD)",
+  "ntp":                                "Sửa Lỗi Tự Động Ngày Giờ",
+  "sai":                                "SAI APK Installer (MOD)",
+
+  // === APK Mod ===
+  "Button_Mapper_v3.22_322_":           "Button Mapper (MOD)",
+  "Buttons_remapper_v1.24.1__PREMIUM_": "Buttons Remapper Premium",
+  "SendFilesToTV-1.4.22":               "Send Files to TV",
+  "TV":                                 "TV (Chưa xác định)",
+  "ferraridownloader":                  "Ferrari Downloader Store (MOD)",
+  "tvQuickActions-Pro_3.5.5_Mod":       "TVQuickActions Pro (MOD VIP)",
+  "vlc":                                "VLC Media Player",
+
+  // === APK Tool ===
+  "Remote_ADB_5.0":                     "Remote ADB Shell",
+  "adbtv-v1.12":                        "ADB TV App Manager",
+  "atvTools_1.2.0_mod":                 "ATVtools (MOD)",
+
+  // === AppDrawer ===
+  "AppDrawer":                          "App Drawer",
+  "AppDrawer_by_PremiumSeven__Dark_":   "App Drawer Dark (PremiumSeven)",
+  "_ATV_app__TV_AppsDrawer":            "TV AppsDrawer",
+
+  // === Ban Phim Anriod TV ===
+  "LatinIMEGoogleTvPrebuilt":           "LatinIME Google TV Keyboard",
+  "leankey":                            "LeanKeyBoard",
+
+  // === IPTV ===
+  "IPTV_PRO":                           "IPTV Pro Premium",
+  "OTT_Navigator_v1.7.3.2":            "OTT Navigator Premium",
+  "SparkleTV":                          "Sparkle TV (MOD Dexunpacker)",
+  "Televizo_byphaptx52022":             "Televizo Premium",
+  "TiviMate_2.1.5_Premium":            "TiviMate Premium 2.1.5",
+  "tivimate":                           "TiviMate Premium",
+
+  // === KHO UNG DUNG _ TRINH DUYET ===
+  "apkup":                              "APK Update",
+  "aptoidetv":                          "AptoideTV",
+  "baostore":                           "BaoStore",
+  "dlstore":                            "DL Store",
+  "emotnstore":                         "Emotn Store",
+  "hdplaystore":                        "HD Play Store",
+  "mstore":                             "MStore (Tùng Bùi)",
+  "ttvstore":                           "TTV Store",
+
+  // === Laucher Mod ===
+  "Google_TV_Home_1.0.499253741":       "Google TV Home",
+  "HomeTV_Launcher_6.3.11":            "HomeTV Launcher",
+  "LM_ATV_-1.0.4_mod":                 "LM ATV Launcher (MOD)",
+  "LM_FireTV_118":                      "LM FireTV Launcher",
+  "Projectivy+Launcher_v4.53_69__Mod":  "Projectivy Launcher (MOD)",
+  "Projectivy_Launcher_v4.64":          "Projectivy Launcher",
+  "atvlauncher":                        "ATV Launcher PRO",
+
+  // === PHIM_TRUYEN HINH_THE THAO ===
+  "4.6.0":                              "App 4.6.0 (Chưa xác định)",
+  "dailymotion":                        "Dailymotion",
+  "hdotv-2.1.4":                        "HDOTV",
+  "hieuga":                             "Hiếu Gà Cinema",
+  "nvc":                                "NVC Movie TV",
+  "rapphimtv":                          "Rạp Phim TV",
+
+  // === Quan Li File ===
+  "ES-File-Explorer-Premium-v4.4.3.2-Mod":         "ES File Explorer Premium (MOD)",
+  "ES_File_Explorer_File_Manager_Premium_v4.2.2.5": "ES File Manager Premium",
+  "MiXplorer-Silver-6.70.3":            "MiXplorer Silver",
+  "MiXplorer-v6.69.2-Silver_b25122550-Mod": "MiXplorer Silver (MOD)",
+  "TotalCmd_3.62d-v7a":                 "Total Commander",
+  "X-plore_File_Manager_v4.19.10__Donate_": "X-plore File Manager (Donate)",
+  "rsfile":                             "RS File Manager",
+
+  // === TRUYEN HINH ===
+  "VTVgo_TV_v11.12.30__1_":            "VTVgo TV v11",
+  "VTVgo_TV_v12.2.11":                 "VTVgo TV v12",
+  "cotivi":                             "Cò Tivi",
+  "dltv":                               "DL Tivi",
+  "iMedia_TV_25.04.06.B":               "iMedia TV",
+  "quantv":                             "QuanTV",
+  "vapptv":                             "VApp TV",
+  "vmtmod2":                            "VMT (MOD)",
+
+  // === YOUTUBE ===
+  "SmartTube_stable_31.17_universal":   "SmartTube (Stable)",
+  "ToTube":                             "ToTube",
+  "kiki":                               "Tìm Kiếm Giọng Nói KiKi",
+  "mapvoice":                           "Map Voice Tìm Kiếm (Linor)",
+  "tkgn":                               "Tìm Kiếm Giọng Nói",
+};
+
+// ----------------------------------------------------------------
+// APP DESC MAP — Mô tả ngắn cho từng ứng dụng
+// ----------------------------------------------------------------
+const APP_DESC_MAP = {
+  // === APK Fix ===
+  "Set_Orientation":                    "Xoay màn hình dọc/ngang tùy ý",
+  "Set_Orientation_mod":                "Xoay màn hình (phiên bản mod)",
+  "Set_Orientation_no_icon":            "Xoay màn hình (không có icon trên launcher)",
+  "apkmirro":                           "Cài file APKX, APKS từ APKMirror",
+  "ntp":                                "Sửa lỗi tự động cập nhật ngày giờ, yêu cầu ADB",
+  "sai":                                "Cài file APKX, APKS split APK",
+
+  // === APK Mod ===
+  "Button_Mapper_v3.22_322_":           "Map phím remote, nút vật lý theo ý muốn",
+  "Buttons_remapper_v1.24.1__PREMIUM_": "Remap phím cứng, tạo combo phím",
+  "SendFilesToTV-1.4.22":               "Gửi file từ điện thoại sang TV qua WiFi",
+  "ferraridownloader":                  "Kho ứng dụng mod — Ferrari Downloader",
+  "tvQuickActions-Pro_3.5.5_Mod":       "Map phím siêu pro cho Android TV",
+  "vlc":                                "Trình phát media VLC cho Android TV",
+
+  // === APK Tool ===
+  "Remote_ADB_5.0":                     "Quản lý ADB từ xa qua mạng LAN",
+  "adbtv-v1.12":                        "Quản lý ứng dụng qua ADB trực tiếp trên TV",
+  "atvTools_1.2.0_mod":                 "Điều khiển TV từ điện thoại qua WiFi",
+
+  // === AppDrawer ===
+  "AppDrawer":                          "Ngăn kéo ứng dụng cho Android TV",
+  "AppDrawer_by_PremiumSeven__Dark_":   "App Drawer giao diện tối (PremiumSeven)",
+  "_ATV_app__TV_AppsDrawer":            "Hiển thị tất cả ứng dụng trên Android TV",
+
+  // === Ban Phim Anriod TV ===
+  "LatinIMEGoogleTvPrebuilt":           "Bàn phím Google TV tích hợp sẵn",
+  "leankey":                            "Bàn phím nhỏ gọn tối ưu cho Android TV",
+
+  // === IPTV ===
+  "IPTV_PRO":                           "Xem IPTV với playlist M3U, có EPG",
+  "OTT_Navigator_v1.7.3.2":            "Xem IPTV, EPG đầy đủ",
+  "SparkleTV":                          "Xem IPTV, đã unlock premium",
+  "Televizo_byphaptx52022":             "Xem IPTV, giao diện đẹp",
+  "TiviMate_2.1.5_Premium":            "TiviMate Premium v2.1.5 — xem IPTV",
+  "tivimate":                           "TiviMate Premium — xem IPTV chất lượng cao",
+
+  // === KHO UNG DUNG _ TRINH DUYET ===
+  "apkup":                              "Kho ứng dụng — thay thế Google Play",
+  "aptoidetv":                          "Kho ứng dụng Aptoide dành cho TV",
+  "baostore":                           "Kho ứng dụng — Bảo Store",
+  "dlstore":                            "Kho ứng dụng — Đình Lập Store",
+  "emotnstore":                         "Kho ứng dụng Emotn",
+  "hdplaystore":                        "Kho ứng dụng HD Play Store",
+  "mstore":                             "Kho ứng dụng — Tùng Bùi",
+  "ttvstore":                           "Kho ứng dụng TTV Store",
+
+  // === Laucher Mod ===
+  "Google_TV_Home_1.0.499253741":       "Launcher Google TV chính thức",
+  "HomeTV_Launcher_6.3.11":            "Launcher giao diện đẹp, dành cho Xiaomi TV",
+  "LM_ATV_-1.0.4_mod":                 "Launcher LM cho Android TV Box (MOD)",
+  "LM_FireTV_118":                      "Launcher LM cho Fire TV",
+  "Projectivy+Launcher_v4.53_69__Mod":  "Launcher đẹp, tùy chỉnh cao (MOD Premium)",
+  "Projectivy_Launcher_v4.64":          "Launcher tùy chỉnh cao cho Android TV",
+  "atvlauncher":                        "Launcher giao diện đơn giản cho ATV",
+
+  // === PHIM_TRUYEN HINH_THE THAO ===
+  "dailymotion":                        "Xem video Dailymotion trên TV",
+  "hieuga":                             "Xem phim tại hieugaphim.fun",
+  "nvc":                                "Xem phim miễn phí không giới hạn",
+  "rapphimtv":                          "Ứng dụng xem phim rạp trên TV",
+  "hdotv-2.1.4":                        "Xem HDOTV trực tuyến",
+
+  // === Quan Li File ===
+  "ES-File-Explorer-Premium-v4.4.3.2-Mod": "Quản lý file ES Explorer Premium (MOD)",
+  "ES_File_Explorer_File_Manager_Premium_v4.2.2.5": "ES File Manager Premium",
+  "MiXplorer-Silver-6.70.3":            "Quản lý file MiXplorer Silver",
+  "MiXplorer-v6.69.2-Silver_b25122550-Mod": "MiXplorer Silver (MOD)",
+  "TotalCmd_3.62d-v7a":                 "Total Commander — quản lý file toàn diện",
+  "X-plore_File_Manager_v4.19.10__Donate_": "X-plore — quản lý file dạng 2 cột",
+  "rsfile":                             "RS File Manager",
+
+  // === TRUYEN HINH ===
+  "VTVgo_TV_v11.12.30__1_":            "VTVgo TV v11 — Xem VTV trực tuyến",
+  "VTVgo_TV_v12.2.11":                 "VTVgo TV v12 — Xem VTV trực tuyến",
+  "cotivi":                             "Cò Tivi — Truyền hình, bóng đá",
+  "dltv":                               "DL Tivi — Truyền hình trực tuyến",
+  "iMedia_TV_25.04.06.B":               "iMedia TV — Truyền hình và bóng đá",
+  "quantv":                             "QuanTV — Truyền hình Việt Nam",
+  "vapptv":                             "VApp TV — Xem truyền hình",
+  "vmtmod2":                            "VMT (MOD) — Ứng dụng truyền hình",
+
+  // === YOUTUBE ===
+  "SmartTube_stable_31.17_universal":   "Xem YouTube không quảng cáo trên TV",
+  "ToTube":                             "Xem YouTube trên Android TV",
+  "kiki":                               "Tìm kiếm giọng nói hỗ trợ SmartTube, iMedia",
+  "mapvoice":                           "Lối tắt tìm kiếm giọng nói Google Map (Linor)",
+  "tkgn":                               "Lối tắt tìm kiếm giọng nói",
 };
 
 // ----------------------------------------------------------------
@@ -591,7 +809,7 @@ async function syncFromGitLab() {
             catLabel: getCatLabel(folder.name),
             icon:     getIcon(rawName),
             link:     rawUrl(f.path),
-            desc:     getCatLabel(folder.name),
+            desc:     APP_DESC_MAP[rawName] || getCatLabel(folder.name),
           });
         });
         return apps;
@@ -732,6 +950,7 @@ function cardHTML(app) {
   const safeIcon = app.icon.replace(/"/g, "&quot;");
   const safeName = app.name.replace(/</g, "&lt;").replace(/>/g, "&gt;");
   const safeCat  = (app.catLabel || app.category).replace(/</g, "&lt;");
+  const safeDesc = (app.desc || safeCat).replace(/</g, "&lt;").replace(/>/g, "&gt;");
   return `
     <div class="glass-card rounded-2xl p-3 flex flex-col gap-2"
          onclick="window.open('${safeLink}','_blank')">
@@ -744,7 +963,7 @@ function cardHTML(app) {
           <div class="text-[0.62rem] font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5 uppercase tracking-wide">${safeCat}</div>
         </div>
       </div>
-      <p class="text-[0.68rem] text-gray-500 dark:text-gray-400 leading-snug line-clamp-2">${safeCat}</p>
+      <p class="text-[0.68rem] text-gray-500 dark:text-gray-400 leading-snug line-clamp-2">${safeDesc}</p>
     </div>
   `;
 }
