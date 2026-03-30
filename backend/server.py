@@ -14,7 +14,7 @@ app.add_middleware(
 
 @app.get("/api/")
 async def preview():
-    html_path = "/app/dl-store.html"
+    html_path = "/app/index.html"
     if os.path.exists(html_path):
         with open(html_path, "r", encoding="utf-8") as f:
             content = f.read()
