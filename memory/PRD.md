@@ -48,7 +48,7 @@ IPTV, KHO UNG DUNG _ TRINH DUYET, Laucher Mod,
 PHIM_TRUYEN HINH_THE THAO, Quan Li File, TRUYEN HINH, YOUTUBE
 
 ## Output File
-`/app/dl-store.html` — standalone HTML, copy and host anywhere
+`/app/index.html` — standalone HTML, copy and host anywhere (dl-store.html đã xóa)
 
 ## Backlog / Future
 - P1: Add icon URL config file in GitLab so icons auto-update from repo
